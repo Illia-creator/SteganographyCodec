@@ -1,0 +1,51 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "SteganographyCodec.Front/1.0.0": {
+        "dependencies": {
+          "SteganographyCodec.Codec": "1.0.0",
+          "SteganographyCodec.Domain": "1.0.0",
+          "SteganographyCodec.Shared": "1.0.0"
+        },
+        "runtime": {
+          "SteganographyCodec.Front.dll": {}
+        }
+      },
+      "SteganographyCodec.Codec/1.0.0": {
+        "dependencies": {
+          "SteganographyCodec.Shared": "1.0.0"
+        },
+        "runtime": {
+          "SteganographyCodec.Codec.dll": {}
+        }
+      },
+      "SteganographyCodec.Domain/1.0.0": {
+        "runtime": {
+          "SteganographyCodec.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SteganographyCodec.Front/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SteganographyCodec.Codec/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SteganographyCodec.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0-windows7.0": {
+      "SteganographyCodec.Codec/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "SteganographyCodec.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SteganographyCodec.Codec.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SteganographyCodec.Codec.dll": {}
+        }
+      },
+      "SteganographyCodec.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/SteganographyCodec.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SteganographyCodec.Domain.dll": {}
+        }
+      },
+      "SteganographyCodec.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "SteganographyCodec.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SteganographyCodec.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SteganographyCodec.Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SteganographyCodec.Codec/1.0.0": {
+      "type": "project",
+      "path": "../SteganographyCodec.Codec/SteganographyCodec.Codec.csproj",
+      "msbuildProject": "../SteganographyCodec.Codec/SteganographyCodec.Codec.csproj"
+    },
+    "SteganographyCodec.Domain/1.0.0": {
+      "type": "project",
+      "path": "../SteganographyCodec.Domain/SteganographyCodec.Domain.csproj",
+      "msbuildProject": "../SteganographyCodec.Domain/SteganographyCodec.Domain.csproj"
+    },
+    "SteganographyCodec.Shared/1.0.0": {
+      "type": "project",
+      "path": "../../Shared/SteganographyCodec.Shared/SteganographyCodec.Shared.csproj",
+      "msbuildProject": "../../Shared/SteganographyCodec.Shared/SteganographyCodec.Shared.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0-windows7.0": [
+      "SteganographyCodec.Codec >= 1.0.0",
+      "SteganographyCodec.Domain >= 1.0.0",
+      "SteganographyCodec.Shared >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\sie29\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\sie29\\source\\repos\\SteganographyCodec\\src\\SteganographyCodec.Front\\SteganographyCodec.Front.csproj",
+      "projectName": "SteganographyCodec.Front",
+      "projectPath": "C:\\Users\\sie29\\source\\repos\\SteganographyCodec\\src\\SteganographyCodec.Front\\SteganographyCodec.Front.csproj",
+      "packagesPath": "C:\\Users\\sie29\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sie29\\source\\repos\\SteganographyCodec\\src\\SteganographyCodec.Front\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\sie29\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0-windows"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
+          "projectReferences": {
+            "C:\\Users\\sie29\\source\\repos\\SteganographyCodec\\Shared\\SteganographyCodec.Shared\\SteganographyCodec.Shared.csproj": {
+              "projectPath": "C:\\Users\\sie29\\source\\repos\\SteganographyCodec\\Shared\\SteganographyCodec.Shared\\SteganographyCodec.Shared.csproj"
+            },
+            "C:\\Users\\sie29\\source\\repos\\SteganographyCodec\\src\\SteganographyCodec.Codec\\SteganographyCodec.Codec.csproj": {
+              "projectPath": "C:\\Users\\sie29\\source\\repos\\SteganographyCodec\\src\\SteganographyCodec.Codec\\SteganographyCodec.Codec.csproj"
+            },
+            "C:\\Users\\sie29\\source\\repos\\SteganographyCodec\\src\\SteganographyCodec.Domain\\SteganographyCodec.Domain.csproj": {
+              "projectPath": "C:\\Users\\sie29\\source\\repos\\SteganographyCodec\\src\\SteganographyCodec.Domain\\SteganographyCodec.Domain.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0-windows7.0": {
+        "targetAlias": "net7.0-windows",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

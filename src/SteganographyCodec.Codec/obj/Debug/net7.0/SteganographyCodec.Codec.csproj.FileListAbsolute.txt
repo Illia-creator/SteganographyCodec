@@ -1,0 +1,15 @@
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Codec\bin\Debug\net7.0\SteganographyCodec.Codec.deps.json
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Codec\bin\Debug\net7.0\SteganographyCodec.Codec.dll
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Codec\bin\Debug\net7.0\SteganographyCodec.Codec.pdb
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Codec\bin\Debug\net7.0\SteganographyCodec.Domain.dll
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Codec\bin\Debug\net7.0\SteganographyCodec.Domain.pdb
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Codec\obj\Debug\net7.0\SteganographyCodec.Codec.csproj.AssemblyReference.cache
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Codec\obj\Debug\net7.0\SteganographyCodec.Codec.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Codec\obj\Debug\net7.0\SteganographyCodec.Codec.AssemblyInfoInputs.cache
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Codec\obj\Debug\net7.0\SteganographyCodec.Codec.AssemblyInfo.cs
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Codec\obj\Debug\net7.0\SteganographyCodec.Codec.csproj.CoreCompileInputs.cache
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Codec\obj\Debug\net7.0\SteganographyCodec.Codec.csproj.CopyComplete
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Codec\obj\Debug\net7.0\SteganographyCodec.Codec.dll
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Codec\obj\Debug\net7.0\refint\SteganographyCodec.Codec.dll
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Codec\obj\Debug\net7.0\SteganographyCodec.Codec.pdb
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Codec\obj\Debug\net7.0\ref\SteganographyCodec.Codec.dll
