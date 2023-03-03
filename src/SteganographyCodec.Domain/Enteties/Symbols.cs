@@ -2,23 +2,21 @@
 {
     public static class Symbols
     {
-        public static string[] IncodeSymbols = { "\x0C00", "\x0C01", "\x0C02", "\x0C03", "\x0C04", "\x0C05",
-            "\x0C06", "\x0C07", "\x0C08", "\x0C09", "\x0C0A", "\x0C0B", "\x0C0C", "\x0C0E", "\x0C0F",
-            "\x0C10", "\x0C12", "\x0C13", "\x0C14", "\x0C15", "\x0C16", "\x0C17", "\x0C18", "\x0C19",
-            "\x0C1A", "\x0C1B", "\x0C1C", "\x0C1D", "\x0C1E", "\x0C1F", "\x0C20", "\x0C21", "\x0C22",
-            "\x0C23", "\x0C24", "\x0C25", "\x0C26", "\x0C27", "\x0C28", "\x0C2A", "\x0C2B", "\x0C2C",
-            "\x0C2D", "\x0C2E", "\x0C2F", "\x0C30", "\x0C31", "\x0C32", "\x0C33", "\x0C34", "\x0C35",
-            "\x0C36", "\x0C37", "\x0C38", "\x0C39", "\x0C3D", "\x0C3E", "\x0C3F", "\x0C41", "\x0C42",
-            "\x0C43", "\x0C44", "\x0C46", "\x0C47", "\x0C48", "\x0C4A", "\x0C4B", "\x0C4C", "\x0C4D",
-            "\x0C55", "\x0C46"
-        }; //71
+        public static string[] IncodeSymbols = {
+            "\x16A0", "\x16A1", "\x16A2", "\x16A3", "\x16A4", "\x16A5", "\x16A6", "\x16A7", "\x16A8", "\x16A9",
+            "\x16AA", "\x16AB", "\x16AC", "\x16AD", "\x16AE", "\x16AF",
+            "\x16B0", "\x16B1", "\x16B2", "\x16B3", "\x16B4", "\x16B5", "\x16B6", "\x16B7", "\x16B8","\x16B9",
+            "\x16BA", "\x16BB", "\x16BC", "\x16BD", "\x16BE", "\x16BF",
+            "\x16C0", "\x16C1", "\x16C2", "\x16C3", "\x16C4", "\x16C5", "\x16C6", "\x16C7", "\x16C8", "\x16C9",
+            "\x16CA", "\x16CB", "\x16CC", "\x16CD", "\x16CE", "\x16CF",
+            "\x16D0", "\x16D1", "\x16D2", "\x16D3", "\x16D4", "\x16D5", "\x16D6", "\x16D7", "\x16D8","\x16D9",
+            "\x16DA", "\x16DB", "\x16DC", "\x16DD", "\x16DE", "\x16DF",
+            "\x16E0", "\x16E1", "\x16E2", "\x16E3", "\x16E4", "\x16E5", "\x16E6", "\x16E7", "\x16E8","\x16E9",
+            "\x16EA", "\x16EB", "\x16EC", "\x16ED", "\x16EE", "\x16EF" // 80
+        }; 
 
-        public static string[] Alpabet = {"A","B","C","D","E","F","G","H","I","J","K","L",
-            "M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
-            "a","b","c","d","e","f","g","h","i","j","k","l","m","n",
-            "o","p","q","r","s","t","u","v","w","x","y","z",
-            ".", ",", " ", "?", "!", "-" };
-
+        public static char[] Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz !*()?,.-_+=/0123456789".ToCharArray(); // Добавить абзац
+        
         public static void Swap<T>(this IList<T> array, int index1, int index2)
         {
             var temporary = array[index1];

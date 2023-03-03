@@ -13,16 +13,6 @@ namespace SteganographyCodec.Domain.Enteties.Files
             PathToFile = pathToFile;
             IsExist = isExist;
             IsChangable = isChangable;
-            if (IsExist == false)
-                CreateFile();
-        }
-
-        public void CreateFile()
-        {
-            using (FileStream file = new FileStream(PathToCreatedFileConst.PathTocreatedFile,
-                FileMode.Create))
-            IsExist = true;
-            PathToFile = PathToCreatedFileConst.PathTocreatedFile;
         }
 
         public void WriteDataInFile(string incodeData)

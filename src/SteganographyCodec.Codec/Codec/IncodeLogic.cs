@@ -1,32 +1,63 @@
 ﻿using SteganographyCodec.Domain.Enteties;
+using System.Runtime.Serialization.Formatters;
 
 namespace SteganographyCodec.Codec.Codec
 {
     public static class IncodeLogic
     {
-        public static char[] AlphabetArray(string startStringValue)
+        public static char[] AlphabetIndexArray(string startStringValue)
         {
             char[] unpreparedArray = startStringValue.ToCharArray();
             return unpreparedArray.Distinct().ToArray();
         }
 
-        public static int[] IncodeAlphabetString(string valueString)
+        public static int[] StringOriginIndex(string valueString) // 1
         {
             char[] value = valueString.ToCharArray();
             int[] characterIndex = new int[value.Length];
-            char[] alphabetArray = AlphabetArray(valueString); // Массив символов без повторений
+            char[] alphabetArray = AlphabetIndexArray(valueString); // Массив символов без повторений
 
             for (int i = 0; i < valueString.Length; i++)
             {
                 characterIndex[i] = Array.IndexOf(alphabetArray, value[i]); // Порядковые номера символов с повторениями
             }
 
-           return characterIndex;
+            return characterIndex;
         }
 
-        public static string IncodeSymbolString(int[] incodeAlphabetString)
+        public static int[] AlphabetStringIndex (string valueString) // 2
         {
-            string result=null;
+            int incodeIndex;
+            char[] value = valueString.ToCharArray();
+            int[] characterIndex = new int[value.Length];
+
+            for (int i = 0; i < valueString.Length; i++)
+            {
+                characterIndex[i] = Array.IndexOf(Symbols.Alphabet, value[i]);
+            }
+
+            return characterIndex;
+        }
+
+        public static int[] ConcatAlphabetAndResult(int[]stringOriginIndex, int[] alphabetStringIndex) // 3
+        {
+            int[] result = new int[stringOriginIndex.Length * 2];
+            int helpIndex;
+           
+            for (int i = 0; i < result.Length; i++)
+            {
+                helpIndex = i / 2;
+                result[i] = stringOriginIndex[helpIndex];
+                i++;
+                result[i] = alphabetStringIndex[helpIndex];
+            }
+
+            return result;
+        }
+
+        public static string IncodeSymbolString(int[] incodeAlphabetString) // 4
+        {
+            string result = null;
             string incodeSymbol;
             for (int i = 0; i < incodeAlphabetString.Length; i++)
             {
@@ -34,6 +65,6 @@ namespace SteganographyCodec.Codec.Codec
                 result = string.Concat(result, incodeSymbol);
             }
             return result;
-        }
+        }        
     }
 }

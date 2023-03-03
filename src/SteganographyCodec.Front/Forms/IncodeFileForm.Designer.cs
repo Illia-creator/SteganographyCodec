@@ -28,51 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BrowseFileButton = new System.Windows.Forms.Button();
-            this.IncodeFileButton = new System.Windows.Forms.Button();
-            this.PathToFileTextbox = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
+            BrowseFileButton = new Button();
+            IncodeFileButton = new Button();
+            PathToFileTextbox = new TextBox();
+            SuspendLayout();
             // 
             // BrowseFileButton
             // 
-            this.BrowseFileButton.Location = new System.Drawing.Point(435, 60);
-            this.BrowseFileButton.Name = "BrowseFileButton";
-            this.BrowseFileButton.Size = new System.Drawing.Size(112, 34);
-            this.BrowseFileButton.TabIndex = 0;
-            this.BrowseFileButton.Text = "Browse File";
-            this.BrowseFileButton.UseVisualStyleBackColor = true;
-            this.BrowseFileButton.Click += new System.EventHandler(this.BrowseFileButton_Click);
+            BrowseFileButton.Location = new Point(435, 60);
+            BrowseFileButton.Name = "BrowseFileButton";
+            BrowseFileButton.Size = new Size(112, 34);
+            BrowseFileButton.TabIndex = 0;
+            BrowseFileButton.Text = "Browse File";
+            BrowseFileButton.UseVisualStyleBackColor = true;
+            BrowseFileButton.Click += BrowseFileButton_Click;
             // 
             // IncodeFileButton
             // 
-            this.IncodeFileButton.Location = new System.Drawing.Point(563, 59);
-            this.IncodeFileButton.Name = "IncodeFileButton";
-            this.IncodeFileButton.Size = new System.Drawing.Size(181, 35);
-            this.IncodeFileButton.TabIndex = 1;
-            this.IncodeFileButton.Text = "Incode File";
-            this.IncodeFileButton.UseVisualStyleBackColor = true;
-            this.IncodeFileButton.Click += new System.EventHandler(this.ShowDataInFileButton_Click);
+            IncodeFileButton.Location = new Point(563, 59);
+            IncodeFileButton.Name = "IncodeFileButton";
+            IncodeFileButton.Size = new Size(181, 35);
+            IncodeFileButton.TabIndex = 1;
+            IncodeFileButton.Text = "Incode File";
+            IncodeFileButton.UseVisualStyleBackColor = true;
+            IncodeFileButton.Click += ShowDataInFileButton_Click;
             // 
             // PathToFileTextbox
             // 
-            this.PathToFileTextbox.Location = new System.Drawing.Point(48, 63);
-            this.PathToFileTextbox.Name = "PathToFileTextbox";
-            this.PathToFileTextbox.Size = new System.Drawing.Size(351, 31);
-            this.PathToFileTextbox.TabIndex = 2;
+            PathToFileTextbox.Location = new Point(48, 63);
+            PathToFileTextbox.Name = "PathToFileTextbox";
+            PathToFileTextbox.Size = new Size(351, 31);
+            PathToFileTextbox.TabIndex = 2;
             // 
             // IncodeFileForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.PathToFileTextbox);
-            this.Controls.Add(this.IncodeFileButton);
-            this.Controls.Add(this.BrowseFileButton);
-            this.Name = "IncodeFileForm";
-            this.Text = "Incode File";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(PathToFileTextbox);
+            Controls.Add(IncodeFileButton);
+            Controls.Add(BrowseFileButton);
+            Name = "IncodeFileForm";
+            Text = "Incode File";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

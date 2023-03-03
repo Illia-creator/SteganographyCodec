@@ -6,7 +6,6 @@ namespace SteganographyCodec.Codec.Files
 {
     public static class IncodeFileProcess
     {
-        public static int step;
         public static string startPath = BusClass.value;
 
         public static void Incoding()
@@ -14,7 +13,7 @@ namespace SteganographyCodec.Codec.Files
             StartFile startFile = new StartFile(startPath);
             string value = startFile.GetDataFromFile();
 
-            string result = IncodeLogic.IncodeSymbolString(IncodeLogic.IncodeAlphabetString(value));
+            string result = GroupIncodeLogicOrder.IncodeString(value);
 
             IncodeFile incodeFile = new IncodeFile();
             incodeFile.WriteDataInFile(result);
