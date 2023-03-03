@@ -2,6 +2,6 @@
 {
     public static class BusClass
     {
-        public static string value;
+        public static string value = null!;
     }
 }

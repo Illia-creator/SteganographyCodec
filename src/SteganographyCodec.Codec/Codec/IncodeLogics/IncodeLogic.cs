@@ -27,7 +27,6 @@ namespace SteganographyCodec.Codec.Codec.IncodeLogics
 
         public static int[] AlphabetStringIndex(string valueString) // 2
         {
-            int incodeIndex;
             char[] value = valueString.ToCharArray();
             int[] characterIndex = new int[value.Length];
 

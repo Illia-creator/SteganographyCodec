@@ -6,7 +6,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "SteganographyCodec.Shared": "1.0.0"
+          "SteganographyCodec.Domain": "1.0.0"
         },
         "compile": {
           "bin/placeholder/SteganographyCodec.Codec.dll": {}
@@ -24,19 +24,6 @@
         "runtime": {
           "bin/placeholder/SteganographyCodec.Domain.dll": {}
         }
-      },
-      "SteganographyCodec.Shared/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "SteganographyCodec.Domain": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SteganographyCodec.Shared.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SteganographyCodec.Shared.dll": {}
-        }
       }
     }
   },
@@ -50,18 +37,12 @@
       "type": "project",
       "path": "../SteganographyCodec.Domain/SteganographyCodec.Domain.csproj",
       "msbuildProject": "../SteganographyCodec.Domain/SteganographyCodec.Domain.csproj"
-    },
-    "SteganographyCodec.Shared/1.0.0": {
-      "type": "project",
-      "path": "../../Shared/SteganographyCodec.Shared/SteganographyCodec.Shared.csproj",
-      "msbuildProject": "../../Shared/SteganographyCodec.Shared/SteganographyCodec.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
       "SteganographyCodec.Codec >= 1.0.0",
-      "SteganographyCodec.Domain >= 1.0.0",
-      "SteganographyCodec.Shared >= 1.0.0"
+      "SteganographyCodec.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -91,9 +72,6 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\sie29\\source\\repos\\SteganographyCodec\\Shared\\SteganographyCodec.Shared\\SteganographyCodec.Shared.csproj": {
-              "projectPath": "C:\\Users\\sie29\\source\\repos\\SteganographyCodec\\Shared\\SteganographyCodec.Shared\\SteganographyCodec.Shared.csproj"
-            },
             "C:\\Users\\sie29\\source\\repos\\SteganographyCodec\\src\\SteganographyCodec.Codec\\SteganographyCodec.Codec.csproj": {
               "projectPath": "C:\\Users\\sie29\\source\\repos\\SteganographyCodec\\src\\SteganographyCodec.Codec\\SteganographyCodec.Codec.csproj"
             },

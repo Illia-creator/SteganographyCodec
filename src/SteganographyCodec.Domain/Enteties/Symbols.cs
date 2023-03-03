@@ -13,9 +13,15 @@
             '\x16DA', '\x16DB', '\x16DC', '\x16DD', '\x16DE', '\x16DF',
             '\x16E0', '\x16E1', '\x16E2', '\x16E3', '\x16E4', '\x16E5', '\x16E6', '\x16E7', '\x16E8', '\x16E9',
             '\x16EA', '\x16EB', '\x16EC', '\x16ED', '\x16EE', '\x16EF' // 80
-        }; 
-
-        public static char[] Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz !*()?,.-_+=/0123456789".ToCharArray(); // Добавить абзац
+        };
+        public static char[] Alphabet ={
+            'e', 'a', ' ', 'o', 'i', '.', 'd', 'h', ',', 'n', 'r', 'E', 's', 't', 'A', 'u', 'y', 'O',
+            'c', 'f', 'I', 'g', 'l', 'D', 'm', 'w', 'H', 'b', 'k', 'N', 'p', 'q', 'R', 'x', 'z', 'S',
+            '?', '!', ';', ':', '-', '_', '+', '=', '/', '"', '\'', '\x00A7', 
+            'T', 'U', 'Y', 'C', 'F', 'G', 'L', 'M', 'W', 'B', 'K', 'P', 'Q', 'X', 'Z',
+            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+                // ' ' . , ? ! ; : - _ = + / " '
+        };
         
         public static void Swap<T>(this IList<T> array, int index1, int index2)
         {

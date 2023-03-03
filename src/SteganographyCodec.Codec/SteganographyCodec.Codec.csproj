@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Shared\SteganographyCodec.Shared\SteganographyCodec.Shared.csproj" />
+    <ProjectReference Include="..\SteganographyCodec.Domain\SteganographyCodec.Domain.csproj" />
   </ItemGroup>
 
 </Project>

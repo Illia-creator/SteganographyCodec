@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "SteganographyCodec.Codec/1.0.0": {
         "dependencies": {
-          "SteganographyCodec.Shared": "1.0.0"
+          "SteganographyCodec.Domain": "1.0.0"
         },
         "runtime": {
           "SteganographyCodec.Codec.dll": {}
