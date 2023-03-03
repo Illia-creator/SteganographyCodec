@@ -1,6 +1,6 @@
-﻿namespace SteganographyCodec.Codec.Codec
+﻿namespace SteganographyCodec.Codec.Codec.IncodeLogics
 {
-    public class GroupIncodeLogicOrder
+    public class GroupIncodeLogic
     {
         public static string IncodeString(string value)
         {

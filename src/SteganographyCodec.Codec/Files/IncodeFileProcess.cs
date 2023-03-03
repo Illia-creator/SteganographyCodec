@@ -1,4 +1,4 @@
-﻿using SteganographyCodec.Codec.Codec;
+﻿using SteganographyCodec.Codec.Codec.IncodeLogics;
 using SteganographyCodec.Domain;
 using SteganographyCodec.Domain.Enteties.Files;
 
@@ -13,7 +13,7 @@ namespace SteganographyCodec.Codec.Files
             StartFile startFile = new StartFile(startPath);
             string value = startFile.GetDataFromFile();
 
-            string result = GroupIncodeLogicOrder.IncodeString(value);
+            string result = GroupIncodeLogic.IncodeString(value);
 
             IncodeFile incodeFile = new IncodeFile();
             incodeFile.WriteDataInFile(result);

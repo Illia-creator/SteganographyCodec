@@ -1,7 +1,7 @@
 ﻿using SteganographyCodec.Domain.Enteties;
 using System.Runtime.Serialization.Formatters;
 
-namespace SteganographyCodec.Codec.Codec
+namespace SteganographyCodec.Codec.Codec.IncodeLogics
 {
     public static class IncodeLogic
     {
@@ -25,7 +25,7 @@ namespace SteganographyCodec.Codec.Codec
             return characterIndex;
         }
 
-        public static int[] AlphabetStringIndex (string valueString) // 2
+        public static int[] AlphabetStringIndex(string valueString) // 2
         {
             int incodeIndex;
             char[] value = valueString.ToCharArray();
@@ -39,11 +39,11 @@ namespace SteganographyCodec.Codec.Codec
             return characterIndex;
         }
 
-        public static int[] ConcatAlphabetAndResult(int[]stringOriginIndex, int[] alphabetStringIndex) // 3
+        public static int[] ConcatAlphabetAndResult(int[] stringOriginIndex, int[] alphabetStringIndex) // 3
         {
             int[] result = new int[stringOriginIndex.Length * 2];
             int helpIndex;
-           
+
             for (int i = 0; i < result.Length; i++)
             {
                 helpIndex = i / 2;
@@ -58,13 +58,13 @@ namespace SteganographyCodec.Codec.Codec
         public static string IncodeSymbolString(int[] incodeAlphabetString) // 4
         {
             string result = null;
-            string incodeSymbol;
+            char incodeSymbol;
             for (int i = 0; i < incodeAlphabetString.Length; i++)
             {
                 incodeSymbol = Symbols.IncodeSymbols[incodeAlphabetString[i]];
                 result = string.Concat(result, incodeSymbol);
             }
             return result;
-        }        
+        }
     }
 }

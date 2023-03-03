@@ -17,5 +17,4 @@ namespace SteganographyCodec.Domain.Enteties.Files
             PathToFile = PathToCreatedDecodeFileConst.PathToCreatedFile;
         }
     }
-
 }

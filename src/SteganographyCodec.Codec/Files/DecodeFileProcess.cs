@@ -1,4 +1,5 @@
-﻿using SteganographyCodec.Domain;
+﻿using SteganographyCodec.Codec.Codec.DecodeLogics;
+using SteganographyCodec.Domain;
 using SteganographyCodec.Domain.Enteties.Files;
 
 namespace SteganographyCodec.Codec.Files
@@ -12,8 +13,7 @@ namespace SteganographyCodec.Codec.Files
             StartFile startFile = new StartFile(startPath);
             string value = startFile.GetDataFromFile();
 
-            string result = "Test"; // decode file
-
+            string result = GroupDecodeLogic.Decoding(value);
             DecodeFile decodeFile = new DecodeFile();
             decodeFile.WriteDataInFile(result);
         }
