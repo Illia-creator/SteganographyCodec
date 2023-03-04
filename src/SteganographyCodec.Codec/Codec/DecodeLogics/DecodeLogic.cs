@@ -1,7 +1,5 @@
 ﻿
 using SteganographyCodec.Domain.Enteties;
-using System.Runtime.InteropServices;
-using System.Runtime.Serialization.Formatters;
 
 namespace SteganographyCodec.Codec.Codec.DecodeLogics
 {
@@ -9,20 +7,21 @@ namespace SteganographyCodec.Codec.Codec.DecodeLogics
     {
         public static int[] IncodeIndexFullArray(string value) // 1
         {
-            int[] characterIndex = new int[value.Length];
+            int[] characterIndex = new int[value.Length - 2];
             char[] charValue = value.ToCharArray();
 
-            for (int i = 0; i < value.Length; i++)
+            for (int i = 0; i < characterIndex.Length; i++)
             {
-                characterIndex[i] = Array.IndexOf(Symbols.IncodeSymbols, charValue[i]); 
+                characterIndex[i] = Array.IndexOf(Symbols.IncodeSymbols, charValue[i]);
             }
 
             return characterIndex;
+        
         }
 
         public static int[] IncodeIndexArray(int[] value) // 2.1
         {
-            int[] result = new int[value.Length/2];
+            int[] result = new int[value.Length / 2];
             int helpIndex;
 
             for (int i = 0; i < result.Length; i++)
@@ -62,10 +61,11 @@ namespace SteganographyCodec.Codec.Codec.DecodeLogics
         public static string DecodeString(char[] alphabet, int[] value) // 4
         {
             string result = null;
+            char[] resultAlplhabet = alphabet.Distinct().ToArray(); // КОСТЫЛЬ 
 
             for (int i = 0; i < value.Length; i++)
             {
-                result = string.Concat(result, alphabet[value[i]]);
+                result = string.Concat(result, resultAlplhabet[value[i]]);
             }
 
             return result;
