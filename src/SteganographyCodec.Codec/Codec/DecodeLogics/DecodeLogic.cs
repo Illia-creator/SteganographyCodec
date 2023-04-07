@@ -7,7 +7,7 @@ namespace SteganographyCodec.Codec.Codec.DecodeLogics
     {
         public static int[] IncodeIndexFullArray(string value) // 1
         {
-            int[] characterIndex = new int[value.Length];
+            int[] characterIndex = new int[value.Length - 2];
             char[] charValue = value.ToCharArray();
 
             for (int i = 0; i < characterIndex.Length; i++)
@@ -51,7 +51,7 @@ namespace SteganographyCodec.Codec.Codec.DecodeLogics
         {
             char[] result = new char[value.Length];
 
-            for (int i = 0; i < value.Length; i++)
+            for (int i = 0; i < result.Length; i++)
             {
                 result[i] = Symbols.Alphabet[value[i]];
             }
