@@ -1,4 +1,7 @@
-﻿using SteganographyCodec.Domain.Enteties.Files.Const;
+﻿using Microsoft.Office.Interop.Word;
+using SteganographyCodec.Domain.Enteties.Files.Const;
+using System.Runtime.InteropServices;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace SteganographyCodec.Domain.Enteties.Files
 {
@@ -16,5 +19,6 @@ namespace SteganographyCodec.Domain.Enteties.Files
                 IsExist = true;
             PathToFile = PathToCreatedIncodeFileConst.PathTocreatedFile;
         }
+        
     }
 }

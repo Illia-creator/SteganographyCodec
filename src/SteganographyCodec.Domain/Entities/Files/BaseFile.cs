@@ -1,8 +1,9 @@
-﻿using SteganographyCodec.Domain.Enteties.Files.Const;
+﻿using System.Runtime.InteropServices;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace SteganographyCodec.Domain.Enteties.Files
 {
-    public class BaseFile 
+    public class BaseFile
     {
         public string PathToFile { get; set; }
         public bool IsExist { get; set; }
@@ -19,12 +20,9 @@ namespace SteganographyCodec.Domain.Enteties.Files
         {
             using (StreamWriter writer = new StreamWriter(PathToFile))
                 writer.WriteLineAsync(incodeData);
+
         }
 
-        public string GetDataFromFile()
-        {
-            string value = File.ReadAllText(PathToFile);
-            return value;
-        }
+       
     }
 }

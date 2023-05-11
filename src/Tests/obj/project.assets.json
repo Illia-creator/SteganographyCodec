@@ -2,19 +2,6 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "SteganographyCodec.Codec/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "SteganographyCodec.Domain": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SteganographyCodec.Codec.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SteganographyCodec.Codec.dll": {}
-        }
-      },
       "SteganographyCodec.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -28,11 +15,6 @@
     }
   },
   "libraries": {
-    "SteganographyCodec.Codec/1.0.0": {
-      "type": "project",
-      "path": "../SteganographyCodec.Codec/SteganographyCodec.Codec.csproj",
-      "msbuildProject": "../SteganographyCodec.Codec/SteganographyCodec.Codec.csproj"
-    },
     "SteganographyCodec.Domain/1.0.0": {
       "type": "project",
       "path": "../SteganographyCodec.Domain/SteganographyCodec.Domain.csproj",
@@ -41,7 +23,6 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "SteganographyCodec.Codec >= 1.0.0",
       "SteganographyCodec.Domain >= 1.0.0"
     ]
   },
@@ -72,9 +53,6 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\sie29\\source\\repos\\SteganographyCodec\\src\\SteganographyCodec.Codec\\SteganographyCodec.Codec.csproj": {
-              "projectPath": "C:\\Users\\sie29\\source\\repos\\SteganographyCodec\\src\\SteganographyCodec.Codec\\SteganographyCodec.Codec.csproj"
-            },
             "C:\\Users\\sie29\\source\\repos\\SteganographyCodec\\src\\SteganographyCodec.Domain\\SteganographyCodec.Domain.csproj": {
               "projectPath": "C:\\Users\\sie29\\source\\repos\\SteganographyCodec\\src\\SteganographyCodec.Domain\\SteganographyCodec.Domain.csproj"
             }
@@ -106,7 +84,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -8,19 +8,10 @@
     ".NETCoreApp,Version=v7.0": {
       "Tests/1.0.0": {
         "dependencies": {
-          "SteganographyCodec.Codec": "1.0.0",
           "SteganographyCodec.Domain": "1.0.0"
         },
         "runtime": {
           "Tests.dll": {}
-        }
-      },
-      "SteganographyCodec.Codec/1.0.0": {
-        "dependencies": {
-          "SteganographyCodec.Domain": "1.0.0"
-        },
-        "runtime": {
-          "SteganographyCodec.Codec.dll": {}
         }
       },
       "SteganographyCodec.Domain/1.0.0": {
@@ -32,11 +23,6 @@
   },
   "libraries": {
     "Tests/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "SteganographyCodec.Codec/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -26,7 +26,7 @@ namespace SteganographyCodec.Front
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Title = FileDialogConst.NameSelectFile;
             fileDialog.InitialDirectory = FileConst.InitialDirectory;
-            fileDialog.Filter = FileDialogConst.FilterTxt;
+            fileDialog.Filter = FileDialogConst.FilterDocx;
             fileDialog.FilterIndex = FileDialogConst.FilterIndex;
             fileDialog.ShowDialog();
             PathToFileTextbox.Text = fileDialog.FileName;

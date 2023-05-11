@@ -10,3 +10,6 @@ C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Domain\obj
 C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Domain\obj\Debug\net7.0\refint\SteganographyCodec.Domain.dll
 C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Domain\obj\Debug\net7.0\SteganographyCodec.Domain.pdb
 C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Domain\obj\Debug\net7.0\ref\SteganographyCodec.Domain.dll
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Domain\obj\Debug\net7.0\Interop.Microsoft.Office.Core.dll
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Domain\obj\Debug\net7.0\Interop.Microsoft.Office.Interop.Word.dll
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Domain\obj\Debug\net7.0\SteganographyCodec.Domain.csproj.ResolveComReference.cache

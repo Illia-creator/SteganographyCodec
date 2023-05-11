@@ -7,8 +7,8 @@
             int[] result1 = DecodeLogic.IncodeIndexFullArray(value);
             int[] result21 = DecodeLogic.IncodeIndexArray(result1);
             int[] result22 = DecodeLogic.IncodeIndexAlphabetArray(result1);
-            char[] result3 = DecodeLogic.IncodeAlphabet(result21);
-            string result = DecodeLogic.DecodeString(result3, result22);
+            char[] result3 = DecodeLogic.IncodeAlphabet(result22);
+            string result = DecodeLogic.DecodeString(result3, result21);
             return result;
         }
     }
