@@ -1,6 +1,7 @@
 ﻿using SteganographyCodec.Codec.Codec.IncodeLogics;
 using SteganographyCodec.Domain;
 using SteganographyCodec.Domain.Enteties.Files;
+using SteganographyCodec.Domain.Entities.Dto;
 
 namespace SteganographyCodec.Codec.Files
 {
@@ -13,7 +14,7 @@ namespace SteganographyCodec.Codec.Files
             StartFile startFile = new StartFile(startPath);
             string value = startFile.GetDataFromFile();
 
-            string result = GroupIncodeLogic.IncodeString(value);
+            ColoredText result = GroupIncodeLogic.IncodeString(value);
 
             IncodeFile incodeFile = new IncodeFile();
             incodeFile.WriteDataInFile(result);

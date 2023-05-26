@@ -1,5 +1,7 @@
 ﻿using SteganographyCodec.Domain.Enteties;
 using SteganographyCodec.Domain.Entities.Dto;
+using SteganographyCodec.Domain.Entities.Exceptions;
+using System.Globalization;
 
 namespace SteganographyCodec.Codec.Codec.IncodeLogics
 {
@@ -45,6 +47,9 @@ namespace SteganographyCodec.Codec.Codec.IncodeLogics
             for (int i = 0; i < valueString.Length; i++)
             {
                 characterIndex[i] = Array.IndexOf(Symbols.Alphabet, value[i]);
+                if (characterIndex[i] < 0)
+                    throw new InvalidSymbolException(value[i]);
+
             }
 
             return characterIndex;     // порядковые номера в алфавите английского языка 28 0 24 24 3 2 27
@@ -73,36 +78,41 @@ namespace SteganographyCodec.Codec.Codec.IncodeLogics
 
             for (int i = 0; i < colors.Length; i++)
             {
-                colors[i] = "FF000000";
+                colors[i] = "#000000";
             }
-
-            int counter = 0;
 
             coloredText.Colors = colors.ToList();
 
+            Random rnd = new Random();
+
             for (int i = 0; i < alphabetInSymbols.Length; i++)
-            {
+            {              
                 for (int j = 0; j < coloredText.Text.Length; j++)
-                {
-                    if (alphabetInSymbols[i] == coloredText.Text[j] && coloredText.Colors[j].ToString() == "FF000000" && coloredText.Colors[j + 1].ToString() == "FF000000")
+                {                   
+                    if (alphabetInSymbols[i] == coloredText.Text[j] && coloredText.Colors[j].ToString() == "#000000" && coloredText.Colors[j + 1].ToString() == "#000000")
                     {
-                        if (i == 4)
-                        { }
-                        coloredText.Colors[j] = "00050005";
+                        coloredText.Colors[j] = "#050006";
                         j++;
+                        
 
+                        int tens = (i) / 10;
+                        int ones = (i) % 10;
+                        int hundreds = 0;
+
+                        if (ones >= 5)
                         {
-                            int tens = i / 10;
-                            int ones = i % 10;
-                            coloredText.Colors[j] = $"00000{tens}0{ones}";
-
+                            hundreds = ones - 5;
+                            ones = 5;
                         }
-
-                        counter++;
+                        else
+                        {
+                            hundreds = rnd.Next(0, 5);
+                        }
+                        coloredText.Colors[j] = $"#0{tens}0{hundreds}0{ones + 1}";
                         break;
                     }
-
                 }
+                
             }
             return coloredText;
 
@@ -110,29 +120,47 @@ namespace SteganographyCodec.Codec.Codec.IncodeLogics
 
         public static ColoredText FullyColoredText(ref ColoredText coloredText, int[] stringOriginIndex)
         {
-            int incodeLenght = stringOriginIndex.Length;
             int i = 0;
-            for(int j = 0; j < coloredText.Text.Length; j++) 
+
+            Random rnd = new Random();
+
+            for (int j = 0; j < coloredText.Text.Length; j++)
             {
-                if (coloredText.Colors[j].ToString() == "FF000000")
+                if (coloredText.Colors[j].ToString() == "#000000" && i<stringOriginIndex.Length)
                 {
                     try
                     {
-                        int tens = stringOriginIndex[i] / 10;
-                        int ones = stringOriginIndex[i] % 10;
-                        coloredText.Colors[j] = $"00000{tens}0{ones}";
+                        int tens = (stringOriginIndex[i]) / 10;
+                        int ones = (stringOriginIndex[i]) % 10;
+                        int hundreds = 0;
+
+                        if (ones >= 4)
+                        {
+                            hundreds = ones - 4;
+                            ones = 4;
+                        }
+                        else
+                        {
+                            hundreds = rnd.Next(0, 5);
+                        }
+
+                        coloredText.Colors[j] = $"#0{hundreds}0{tens}0{ones + 1}";
 
                         i++;
                     }
-                    catch 
-                    { 
+                    catch
+                    {
                         Exception x;
                         break;
                     }
                 }
+                else j = j + 2;
+
+                if (i == coloredText.Text.Length - 1)
+                    throw new Exception("Text must be nearly 500 symbols or less");
             }
+
             return coloredText;
         }
-
     }
 }

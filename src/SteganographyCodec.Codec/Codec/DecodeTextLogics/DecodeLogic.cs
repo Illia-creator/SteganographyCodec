@@ -1,83 +1,151 @@
-﻿
-using SteganographyCodec.Domain.Enteties;
+﻿using SteganographyCodec.Domain.Enteties;
+using SteganographyCodec.Domain.Entities.Dto;
+using System.Text;
 
 namespace SteganographyCodec.Codec.Codec.DecodeLogics
 {
     public static class DecodeLogic
     {
-        public static int[] IncodeIndexFullArray(string value) // 1
+        public static ColoredText SplitOnlyAlphabet(ColoredText firstColoredText) // 1
         {
-            int[] characterIndex = new int[value.Length - 2];
-            char[] charValue = value.ToCharArray();
+            ColoredText alphabetColoredText = new ColoredText();
 
-            for (int i = 0; i < characterIndex.Length; i++)
+            List<char> symbols = new List<char>();
+            List<string> colors = new List<string>();
+
+            for (int i = 0; i < firstColoredText.Colors.Count; i++)
             {
-                characterIndex[i] = Array.IndexOf(Symbols.NewAlphabet, charValue[i]);
+                if (firstColoredText.Colors[i] == "00060005")
+                {
+                    symbols.Add(firstColoredText.Text[i]);
+                    firstColoredText.Colors[i] = "00000000";
+                    i++;
+                    colors.Add(firstColoredText.Colors[i]);
+                    firstColoredText.Colors[i] = "00000000";
+                }
             }
 
-            return characterIndex;
+            alphabetColoredText.Text = symbols.ToArray();
+            alphabetColoredText.Colors = colors;
+
+            return alphabetColoredText;
         }
 
-        public static int[] IncodeIndexArray(int[] value) // 2.1
+        public static char[] SortedAlphabet(ColoredText splitOnlyAlphabet)
         {
-            int alphabetLength = value[value.Length - 1];
-            int[] result = new int[value.Length - alphabetLength - 1];
-            int helpIndex;
+            int ones;
+            int tens;
+            int hundreds = 0;
 
-            for (int i = 0; i < alphabetLength; i++)
+            List<int> order = new List<int>();
+
+            for (int i = 0; i < splitOnlyAlphabet.Colors.Count; i++)
             {
-                helpIndex = i * 2;
-                result[i] = value[helpIndex];
+                tens = Convert.ToInt32(splitOnlyAlphabet.Colors[i].Substring(6, 2));
+                ones = Convert.ToInt32(splitOnlyAlphabet.Colors[i].Substring(2, 2));
+
+                if (ones > 5)
+                {
+                    hundreds = Convert.ToInt32(splitOnlyAlphabet.Colors[i].Substring(4, 2));
+
+                    ones = 6 + hundreds;
+                }
+
+                order.Add(tens * 10 + ones - 1);
             }
 
-            helpIndex = alphabetLength * 2;
+            bool swapped;
 
-            for (int i = alphabetLength; i < result.Length; i++)
+            for (int i = 0; i < order.Count; i++)
             {
-                result[i] = value[helpIndex];
-                helpIndex++;
+                swapped = false;
+
+                for (int j = 0; j < order.Count - i - 1; j++)
+                {
+                    if (order[j] > order[j + 1])
+                    {
+                        int temp = order[j];
+                        char tempChar = splitOnlyAlphabet.Text[j];
+
+                        order[j] = order[j + 1];
+                        splitOnlyAlphabet.Text[j] = splitOnlyAlphabet.Text[j + 1];
+
+                        order[j + 1] = temp;
+                        splitOnlyAlphabet.Text[j + 1] = tempChar;
+
+                        swapped = true;
+                    }
+                }
+
+                if (!swapped)
+                    break;
             }
 
-            return result;
-         }
+            return splitOnlyAlphabet.Text;
+        }
 
-        public static int[] IncodeIndexAlphabetArray(int[] value) // 2.2
+        public static int[] NewAlphabetIndex(char[] symbols)
         {
-            int[] result = new int[value[value.Length - 1]];
-            int helpIndex = 1;
+            int[] result = new int[symbols.Length];
 
-
-            for (int i = 0; i < result.Length; i++)
+            for (int i = 0; i < symbols.Length; i++)
             {
-                result[i] = value[helpIndex];
-                helpIndex = helpIndex + 2;
+                for (int j = 0; j < Symbols.NewAlphabet.Length; j++)
+                {
+                    if (symbols[i] == Symbols.NewAlphabet[j])
+                    {
+                        result[i] = j;
+                        break;
+                    }
+                }
             }
-
             return result;
         }
 
-        public static char[] IncodeAlphabet(int[] value) // 3 
+        public static string ResultMessage(ColoredText coloredText, int[] index)
         {
-            char[] result = new char[value.Length];
+            StringBuilder builder = new StringBuilder();
 
-            for (int i = 0; i < result.Length; i++)
+            List<int> textIndexes = new List<int>();
+
+            char symbol;
+
+            int ones;
+            int tens;
+            int hundreds = 0;
+
+            List<string> input = new List<string>();
+
+            for (int i = 0; i < coloredText.Colors.Count - 1; i++)
             {
-                result[i] = Symbols.Alphabet[value[i]];
+                if (coloredText.Colors[i] != "00000000")
+                {
+                    input.Add(coloredText.Colors[i]);                   
+                }
             }
-            return result;
-        }
 
-        public static string DecodeString(char[] alphabet, int[] value) // 4
-        {
-            string result = null;
-
-            for (int i = 0; i < value.Length; i++)
+            for (int i = 0; i < input.Count; i++)
             {
-                result = string.Concat(result, alphabet[value[i]]);
+                ones = Convert.ToInt32(input[i].Substring(2, 2));
+                tens = Convert.ToInt32(input[i].Substring(4, 2));
+
+                if (ones >= 5)
+                {
+                    hundreds = Convert.ToInt32(input[i].Substring(6, 2));
+
+                    ones = 5 + hundreds;
+                }                
+                textIndexes.Add(tens * 10 + ones - 1);
             }
 
-            return result;
-        }
+            for (int i = 0; i < textIndexes.Count; i++)
+            {
+                symbol = Symbols.Alphabet[index[textIndexes[i]]];
 
+                builder.Append(symbol);
+            }
+
+             return builder.ToString();        
+        }
     }
 }

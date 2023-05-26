@@ -14,15 +14,7 @@ namespace SteganographyCodec.Domain.Enteties.Files
             PathToFile = pathToFile;
             IsExist = isExist;
             IsChangable = isChangable;
-        }
+        }    
 
-        public void WriteDataInFile(string incodeData)
-        {
-            using (StreamWriter writer = new StreamWriter(PathToFile))
-                writer.WriteLineAsync(incodeData);
-
-        }
-
-       
     }
 }

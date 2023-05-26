@@ -1,4 +1,6 @@
-﻿using System.Runtime.InteropServices;
+﻿using SteganographyCodec.Domain.Entities.Dto;
+using System.Drawing;
+using System.Runtime.InteropServices;
 using Word = Microsoft.Office.Interop.Word;
 
 namespace SteganographyCodec.Domain.Enteties.Files
@@ -11,6 +13,7 @@ namespace SteganographyCodec.Domain.Enteties.Files
         public string GetDataFromFile()
         {
             Word.Application application = new Word.Application();
+            
             Word.Document wordDoc = application.Documents.Open(PathToFile);
 
             List<char> TextChars = new List<char>();
@@ -25,9 +28,34 @@ namespace SteganographyCodec.Domain.Enteties.Files
 
             wordDoc.Close();
             application.Quit();
-            Marshal.ReleaseComObject(application);
 
             return result;
+        }
+        public ColoredText GetIncodedDataFromFile()
+        {
+            Word.Application application = new Word.Application();
+            Word.Document wordDoc = application.Documents.Open(PathToFile);
+
+            List<char> TextChars = new List<char>();
+            List<string> TextColors = new List<string>();
+
+            foreach (Word.Range range in wordDoc.StoryRanges)
+            {
+                foreach (Word.Range character in range.Characters)
+                {
+                    string colorValue = (character.Font.Color).ToString("X");
+
+                    TextColors.Add(colorValue);
+                    TextChars.Add(Convert.ToChar(character.Text));
+                }
+            }
+
+            ColoredText coloredText = new ColoredText(TextChars.ToArray(), TextColors);            
+
+            wordDoc.Close();
+            application.Quit();
+
+             return coloredText;
         }
 
     }

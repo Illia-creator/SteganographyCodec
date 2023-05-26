@@ -1,6 +1,6 @@
-﻿using SteganographyCodec.Domain.Enteties.Files.Const;
+﻿using SteganographyCodec.Codec.Files;
 using SteganographyCodec.Domain;
-using SteganographyCodec.Codec.Files;
+using SteganographyCodec.Domain.Enteties.Files.Const;
 
 namespace SteganographyCodec.Front.Forms
 {
@@ -22,11 +22,33 @@ namespace SteganographyCodec.Front.Forms
             fileDialog.ShowDialog();
             PathToFileTextbox.Text = fileDialog.FileName;
             BusClass.value = fileDialog.FileName;
+
         }
 
         private void DecodeFileButton_Click(object sender, EventArgs e)
         {
-            DecodeFileProcess.Decoding();
+            InProcessForm inProcessForm = new InProcessForm(2);
+
+            try
+            {
+                if (BusClass.value == string.Empty)
+                    throw new Exception("Select File Firstly!");
+
+                inProcessForm.Show();
+
+                DecodeFileProcess.Decoding();
+
+                inProcessForm.CloseForm();
+            }
+
+            catch (Exception ex)
+            {
+                ExceptionForm exceptionForm = new ExceptionForm(ex);
+
+                exceptionForm.Show();
+
+                inProcessForm.ExtremeClose();
+            }
         }
     }
 }

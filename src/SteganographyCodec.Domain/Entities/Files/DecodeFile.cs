@@ -1,7 +1,6 @@
 ﻿using Microsoft.Office.Interop.Word;
 using SteganographyCodec.Domain.Enteties.Files.Const;
-using System.Runtime.InteropServices;
-using Word = Microsoft.Office.Interop.Word;
+using SteganographyCodec.Domain.Entities.Dto;
 
 namespace SteganographyCodec.Domain.Enteties.Files
 {
@@ -14,37 +13,37 @@ namespace SteganographyCodec.Domain.Enteties.Files
         }
         public void CreateFile()
         {
-            using (FileStream file = new FileStream(PathToCreatedDecodeFileConst.PathToCreatedFile,
-                FileMode.Create))
-                IsExist = true;
             PathToFile = PathToCreatedDecodeFileConst.PathToCreatedFile;
+
+            Application wordApp = new Application();
+
+            Document doc = wordApp.Documents.Add();
+
+            doc.SaveAs(PathToFile);
+
+            doc.Close();
+
+            wordApp.Quit();
+
+            IsExist = true;
         }
-        public string GetDataFromFile()
+        public void WriteDataInFile(string message)
         {
-            Word.Application application = new Word.Application();
-            Word.Document wordDoc = application.Documents.Open(PathToFile);
+            Application wordApp = new Application();
+            
+            Document doc = wordApp.Documents.Add();
 
-            List<char> TextChars = new List<char>();
-            List<string> TextColors = new List<string>();
+            Paragraphs paragraphs = doc.Paragraphs;
 
-            foreach (Word.Range range in wordDoc.StoryRanges)
-            {
-                foreach (Word.Range character in range.Characters)
-                {
-                    var colorValue = character.Font.Color.ToString("X");
+            Paragraph paragraph = paragraphs.Add();
 
+            paragraph.Range.Text = message;
 
-                    TextColors.Add(colorValue);
-                    TextChars.Add(Convert.ToChar(character.Text));
+            doc.SaveAs(PathToFile);
 
-                }
-            }
-
-            wordDoc.Close();
-            application.Quit();
-            Marshal.ReleaseComObject(application);
-
-            return null;
+            doc.Close();
+            wordApp.Quit();
         }
     }
+
 }

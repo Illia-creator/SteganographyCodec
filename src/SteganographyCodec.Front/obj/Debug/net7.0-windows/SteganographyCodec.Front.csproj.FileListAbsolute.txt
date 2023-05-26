@@ -22,3 +22,5 @@ C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\obj\
 C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\bin\Debug\net7.0-windows\SteganographyCodec.Codec.dll
 C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\bin\Debug\net7.0-windows\SteganographyCodec.Codec.pdb
 C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\obj\Debug\net7.0-windows\SteganographyCodec.Front.Forms.DecodeFileForm.resources
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\obj\Debug\net7.0-windows\SteganographyCodec.Front.Forms.ExceptionForm.resources
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\obj\Debug\net7.0-windows\SteganographyCodec.Front.Forms.InProcessForm.resources
