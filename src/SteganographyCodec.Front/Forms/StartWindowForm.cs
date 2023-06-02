@@ -11,7 +11,7 @@ namespace SteganographyCodec.Front
 
         private void IncodeFileButton_Click(object sender, EventArgs e)
         {
-            IncodeFileForm incodeFileForm = new IncodeFileForm();
+            EncodeFileForm incodeFileForm = new EncodeFileForm();
             incodeFileForm.Show();
         }
 

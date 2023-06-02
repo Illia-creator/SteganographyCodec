@@ -30,7 +30,7 @@
         {
             ChooseActingLabel = new Label();
             DecodeFileButton = new Button();
-            IncodeFileButton = new Button();
+            EncodeFileButton = new Button();
             SuspendLayout();
             // 
             // ChooseActingLabel
@@ -52,22 +52,22 @@
             DecodeFileButton.UseVisualStyleBackColor = true;
             DecodeFileButton.Click += DecodeFileButton_Click;
             // 
-            // IncodeFileButton
+            // EncodeFileButton
             // 
-            IncodeFileButton.Location = new Point(499, 229);
-            IncodeFileButton.Name = "IncodeFileButton";
-            IncodeFileButton.Size = new Size(174, 77);
-            IncodeFileButton.TabIndex = 2;
-            IncodeFileButton.Text = "Incode File";
-            IncodeFileButton.UseVisualStyleBackColor = true;
-            IncodeFileButton.Click += IncodeFileButton_Click;
+            EncodeFileButton.Location = new Point(499, 229);
+            EncodeFileButton.Name = "EncodeFileButton";
+            EncodeFileButton.Size = new Size(174, 77);
+            EncodeFileButton.TabIndex = 2;
+            EncodeFileButton.Text = "Encode File";
+            EncodeFileButton.UseVisualStyleBackColor = true;
+            EncodeFileButton.Click += IncodeFileButton_Click;
             // 
             // StartWindowForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(IncodeFileButton);
+            Controls.Add(EncodeFileButton);
             Controls.Add(DecodeFileButton);
             Controls.Add(ChooseActingLabel);
             Name = "StartWindowForm";
@@ -80,6 +80,6 @@
 
         private Label ChooseActingLabel;
         private Button DecodeFileButton;
-        private Button IncodeFileButton;
+        private Button EncodeFileButton;
     }
 }

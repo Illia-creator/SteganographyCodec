@@ -12,7 +12,7 @@ namespace SteganographyCodec.Codec.Files
         public static void Decoding()
         {
             StartFile startFile = new StartFile(startPath);
-            ColoredText value = startFile.GetIncodedDataFromFile();
+            ColoredText value = startFile.GetEncodedDataFromFile();
 
             string result = GroupDecodeLogic.Decoding(value);
 

@@ -24,7 +24,7 @@ namespace SteganographyCodec.Front.Forms
 
                 if (processCode == 1)
                 {
-                    ProcessNameLabel.Text = "Incoding";
+                    ProcessNameLabel.Text = "Encoding";
                 }
                 else if (processCode == 2)
                 {

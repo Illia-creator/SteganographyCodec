@@ -31,7 +31,7 @@ namespace SteganographyCodec.Domain.Enteties.Files
 
             return result;
         }
-        public ColoredText GetIncodedDataFromFile()
+        public ColoredText GetEncodedDataFromFile()
         {
             Word.Application application = new Word.Application();
             Word.Document wordDoc = application.Documents.Open(PathToFile);

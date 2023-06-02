@@ -15,7 +15,6 @@ C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\obj\
 C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\obj\Debug\net7.0-windows\SteganographyCodec.Front.pdb
 C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\obj\Debug\net7.0-windows\SteganographyCodec.Front.genruntimeconfig.cache
 C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\obj\Debug\net7.0-windows\ref\SteganographyCodec.Front.dll
-C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\obj\Debug\net7.0-windows\SteganographyCodec.Front.IncodeFileForm.resources
 C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\bin\Debug\net7.0-windows\SteganographyCodec.Domain.dll
 C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\bin\Debug\net7.0-windows\SteganographyCodec.Domain.pdb
 C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\obj\Debug\net7.0-windows\SteganographyCodec.Front.csproj.CopyComplete
@@ -24,3 +23,4 @@ C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\bin\
 C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\obj\Debug\net7.0-windows\SteganographyCodec.Front.Forms.DecodeFileForm.resources
 C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\obj\Debug\net7.0-windows\SteganographyCodec.Front.Forms.ExceptionForm.resources
 C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\obj\Debug\net7.0-windows\SteganographyCodec.Front.Forms.InProcessForm.resources
+C:\Users\sie29\source\repos\SteganographyCodec\src\SteganographyCodec.Front\obj\Debug\net7.0-windows\SteganographyCodec.Front.EncodeFileForm.resources
