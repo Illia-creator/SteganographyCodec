@@ -1,10 +1,11 @@
 ﻿using Microsoft.Office.Interop.Word;
 using SteganographyCodec.Domain.Enteties.Files.Const;
 using SteganographyCodec.Domain.Entities.Dto;
+using SteganographyCodec.Domain.Entities.Files;
 
 namespace SteganographyCodec.Domain.Enteties.Files
 {
-    public class DecodeFile : BaseFile
+    public class DecodeFile : BaseFile, IWriteFile
     {
         public DecodeFile(string pathToFile = "", bool isExist = false, bool isChangable = true) : base(pathToFile, isExist, isChangable)
         {

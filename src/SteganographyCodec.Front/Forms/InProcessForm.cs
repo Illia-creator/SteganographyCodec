@@ -1,13 +1,5 @@
 ﻿using SteganographyCodec.Domain.Entities.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Reflection;
 
 namespace SteganographyCodec.Front.Forms
 {
@@ -30,7 +22,7 @@ namespace SteganographyCodec.Front.Forms
                 {
                     ProcessNameLabel.Text = "Decoding";
                 }
-            } 
+            }
             catch (ExtremeCloseFormException ex)
             {
                 Close();
@@ -39,6 +31,20 @@ namespace SteganographyCodec.Front.Forms
 
         public void CloseForm()
         {
+            if (processCode == 1)
+            {
+                ProcessNameLabel.Text = "Encoding Completed";               
+            }
+            else if (processCode == 2)
+            {
+                ProcessNameLabel.Text = "Decoding Completed";
+            }
+
+            pictureBox.Image = Image.FromFile(
+                    Path.Combine(
+                    Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
+                     @"C:\Users\sie29\source\repos\SteganographyCodec\src\Images\Oxygen-Icons.org-Oxygen-Actions-dialog-ok.256.png"));
+
             OkButton.Visible = true;
         }
 

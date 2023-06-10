@@ -1,13 +1,15 @@
 ﻿using Microsoft.Office.Interop.Word;
 using SteganographyCodec.Domain.Enteties.Files.Const;
 using SteganographyCodec.Domain.Entities.Dto;
+using SteganographyCodec.Domain.Entities.Files;
+using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using Word = Microsoft.Office.Interop.Word;
 
 namespace SteganographyCodec.Domain.Enteties.Files
 {
-    public class EncodeFile : BaseFile
+    public class EncodeFile : BaseFile, IWriteFile
     {
         public EncodeFile(string pathToFile = "", bool isExist = false, bool isChangable = true) : base(pathToFile, isExist, isChangable)
         {
@@ -42,22 +44,25 @@ namespace SteganographyCodec.Domain.Enteties.Files
             doc.Content.Text = text;
 
             int currentPosition = 0;
-
+            var sw = new Stopwatch();
+            sw.Start();
             for (int i = 0; i < coloredText.Colors.Count; i++)
             {
-                // Получение текущего цвета
+
                 string colorCode = coloredText.Colors[i];
-
-                // Конвертация цвета из шестнадцатиричного формата в объект Color
-                Color color = ColorTranslator.FromHtml(colorCode);
-
-                // Выделение текущего символа
                 Word.Range range = doc.Range(currentPosition, currentPosition + 1);
-                range.Font.Color = (WdColor)ColorTranslator.ToOle(color);
 
-                // Обновление позиции текущего символа
+                if (colorCode != "#000000")
+                {
+                    Color color = ColorTranslator.FromHtml(colorCode);
+                    range.Font.Color = (WdColor)ColorTranslator.ToOle(color);
+                }              
+                
                 currentPosition++;
             }
+
+            sw.Stop();
+            var ds =sw.Elapsed;
 
             doc.SaveAs(PathToFile);
 

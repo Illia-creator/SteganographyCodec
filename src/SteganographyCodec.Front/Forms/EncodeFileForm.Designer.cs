@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             BrowseFileButton = new Button();
-            IncodeFileButton = new Button();
+            EncodeFileButton = new Button();
             PathToFileTextbox = new TextBox();
             SuspendLayout();
             // 
@@ -43,15 +43,15 @@
             BrowseFileButton.UseVisualStyleBackColor = true;
             BrowseFileButton.Click += BrowseFileButton_Click;
             // 
-            // IncodeFileButton
+            // EncodeFileButton
             // 
-            IncodeFileButton.Location = new Point(563, 59);
-            IncodeFileButton.Name = "IncodeFileButton";
-            IncodeFileButton.Size = new Size(181, 35);
-            IncodeFileButton.TabIndex = 1;
-            IncodeFileButton.Text = "Incode File";
-            IncodeFileButton.UseVisualStyleBackColor = true;
-            IncodeFileButton.Click += ShowDataInFileButton_Click;
+            EncodeFileButton.Location = new Point(563, 59);
+            EncodeFileButton.Name = "EncodeFileButton";
+            EncodeFileButton.Size = new Size(181, 35);
+            EncodeFileButton.TabIndex = 1;
+            EncodeFileButton.Text = "Encode File";
+            EncodeFileButton.UseVisualStyleBackColor = true;
+            EncodeFileButton.Click += ShowDataInFileButton_Click;
             // 
             // PathToFileTextbox
             // 
@@ -60,15 +60,15 @@
             PathToFileTextbox.Size = new Size(351, 31);
             PathToFileTextbox.TabIndex = 2;
             // 
-            // IncodeFileForm
+            // EncodeFileForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(PathToFileTextbox);
-            Controls.Add(IncodeFileButton);
+            Controls.Add(EncodeFileButton);
             Controls.Add(BrowseFileButton);
-            Name = "IncodeFileForm";
+            Name = "EncodeFileForm";
             Text = "Incode File";
             ResumeLayout(false);
             PerformLayout();
@@ -77,7 +77,7 @@
         #endregion
 
         private Button BrowseFileButton;
-        private Button IncodeFileButton;
+        private Button EncodeFileButton;
         public TextBox PathToFileTextbox;
     }
 }

@@ -18,10 +18,10 @@ namespace SteganographyCodec.Codec.Codec.DecodeLogics
                 if (firstColoredText.Colors[i] == "00060005")
                 {
                     symbols.Add(firstColoredText.Text[i]);
-                    firstColoredText.Colors[i] = "00000000";
+                    firstColoredText.Colors[i] = "FF000000";
                     i++;
                     colors.Add(firstColoredText.Colors[i]);
-                    firstColoredText.Colors[i] = "00000000";
+                    firstColoredText.Colors[i] = "FF000000";
                 }
             }
 
@@ -114,28 +114,22 @@ namespace SteganographyCodec.Codec.Codec.DecodeLogics
             int tens;
             int hundreds = 0;
 
-            List<string> input = new List<string>();
 
             for (int i = 0; i < coloredText.Colors.Count - 1; i++)
             {
-                if (coloredText.Colors[i] != "00000000")
+                if (coloredText.Colors[i] != "FF000000")
                 {
-                    input.Add(coloredText.Colors[i]);                   
+                    ones = Convert.ToInt32(coloredText.Colors[i].Substring(2, 2));
+                    tens = Convert.ToInt32(coloredText.Colors[i].Substring(4, 2));
+
+                    if (ones >= 5)
+                    {
+                        hundreds = Convert.ToInt32(coloredText.Colors[i].Substring(6, 2));
+
+                        ones = 5 + hundreds;
+                    }
+                    textIndexes.Add(tens * 10 + ones - 1);
                 }
-            }
-
-            for (int i = 0; i < input.Count; i++)
-            {
-                ones = Convert.ToInt32(input[i].Substring(2, 2));
-                tens = Convert.ToInt32(input[i].Substring(4, 2));
-
-                if (ones >= 5)
-                {
-                    hundreds = Convert.ToInt32(input[i].Substring(6, 2));
-
-                    ones = 5 + hundreds;
-                }                
-                textIndexes.Add(tens * 10 + ones - 1);
             }
 
             for (int i = 0; i < textIndexes.Count; i++)
@@ -145,7 +139,8 @@ namespace SteganographyCodec.Codec.Codec.DecodeLogics
                 builder.Append(symbol);
             }
 
-             return builder.ToString();        
+             
+            return builder.ToString();        
         }
     }
 }
